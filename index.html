@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sainikitha Vantari - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh; /* Full height */
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .navigation-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .nav-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.1); /* Grow the button on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            padding: 20px;
+            background-color: white;
+            width: 100%;
+            height: 100vh; /* Full height per section */
+            position: absolute;
+            top: 100%; /* Start from below */
+            left: 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: top 0.6s ease, opacity 0.6s ease;
+            opacity: 0;
+        }
+
+        /* Default section visible */
+        #menu {
+            top: 0;
+            opacity: 1;
+        }
+
+        .section.show {
+            top: 0;
+            opacity: 1;
+        }
+
+        /* Style to make sure the sections are stacked */
+        #menu {
+            top: 0;
+        }
+
+        #education {
+            top: 100%;
+        }
+
+        #skills {
+            top: 200%;
+        }
+
+        #projects {
+            top: 300%;
+        }
+
+        #contact {
+            top: 400%;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .section ul {
+            font-size: 18px;
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .section .experience {
+            margin-top: 20px;
+        }
+
+        .section .project-title {
+            font-weight: bold;
+        }
+
+        .section .project-description {
+            font-size: 16px;
+        }
+
+        .section .project-timeline {
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation buttons -->
+        <div class="navigation-buttons">
+            <button class="nav-btn" onclick="navigateTo('education')">Education</button>
+            <button class="nav-btn" onclick="navigateTo('skills')">Skills</button>
+            <button class="nav-btn" onclick="navigateTo('projects')">Projects</button>
+            <button class="nav-btn" onclick="navigateTo('contact')">Contact</button>
+            <button class="nav-btn" onclick="navigateTo('menu')">Back to Menu</button>
+        </div>
+
+        <!-- Content sections -->
+        <div id="menu" class="section">
+            <h2>Welcome to My Portfolio</h2>
+            <img src="profile.jpg" alt="Sainikitha Vantari" class="profile-image">
+            <p>Hello! I'm Sainikitha Vantari, a passionate Software Engineer specializing in autonomous systems, computer vision, and AI. Explore my work below.</p>
+        </div>
+
+        <div id="education" class="section">
+            <h2>Education</h2>
+            <p><strong>Sacred Heart University</strong> - Master of Science in Computer Science<br>
+            Fairfield, CT | December 2024</p>
+            <p><strong>Jawaharlal Nehru Technological University</strong> - Bachelor of Engineering in Computer Science<br>
+            Hyderabad, India | August 2023</p>
+        </div>
+
+        <div id="skills" class="section">
+            <h2>Skills & Technical Expertise</h2>
+            <ul>
+                <li><strong>Programming Languages:</strong> Python, C++, SQL, JavaScript</li>
+                <li><strong>Autonomous Systems & Robotics:</strong> Perception, Prediction, Planning, Multi-object Tracking, 3D Reconstruction</li>
+                <li><strong>Machine Learning & AI:</strong> Active Learning, Self-Supervised Learning, Model Compression, Neural Networks</li>
+                <li><strong>Frameworks & Tools:</strong> OpenCV, PyTorch, TensorFlow, Flask, Matlab</li>
+                <li><strong>Development & Methodologies:</strong> Algorithm Design, Embedded Systems, Agile Collaboration</li>
+                <li><strong>Safety & Evaluation:</strong> Simulation Testing, Real-World Deployment, Robust Model Verification</li>
+            </ul>
+        </div>
+
+        <div id="projects" class="section">
+            <h2>Projects</h2>
+            
+            <div class="experience">
+                <div class="project-title">Computer Vision-based Athlete Performance Analytics</div>
+                <div class="project-timeline">Sacred Heart University | April 2024 – December 2024</div>
+                <p class="project-description">
+                    Designed and developed a Python-based analytics tool for tracking athlete movements with 90% accuracy. Integrated pose estimation algorithms and developed real-time data visualizations using OpenCV.
+                </p>
+            </div>
+
+            <div class="experience">
+                <div class="project-title">Lane Detection for Autonomous Driving using OpenCV</div>
+                <div class="project-timeline">Jawaharlal Nehru Technological University | January 2022 – May 2023</div>
+                <p class="project-description">
+                    Created a lane detection system with 95% accuracy for self-driving applications and optimized computer vision algorithms for real-time deployment on cloud-based platforms.
+                </p>
+            </div>
+
+            <div class="experience">
+                <div class="project-title">Android-based Crime Reporting System</div>
+                <div class="project-timeline">Jawaharlal Nehru Technological University | April 2021 – December 2021</div>
+                <p class="project-description">
+                    Developed a secure real-time incident reporting application, improving data accuracy by 30%. Implemented robust authentication protocols and applied agile methodologies for scalable app deployment.
+                </p>
+            </div>
+        </div>
+
+        <div id="contact" class="section">
+            <h2>Contact</h2>
+            <p>If you'd like to connect, feel free to reach out to me via email or phone:</p>
+            <ul>
+                <li><strong>Email:</strong> sainikithavantari@gmail.com</li>
+                <li><strong>Phone:</strong> +1 551-229-8340</li>
+                <li><strong>Location:</strong> Kearny, NJ</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(sectionId) {
+            // Hide all sections by setting top position below the view
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('show');
+                section.style.top = '100%'; // Move sections below the screen
+                section.style.opacity = '0'; // Fade out
+            });
+
+            // Show the selected section by sliding it in from below
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.top = '0'; // Slide the section to the top
+                setTimeout(() => {
+                    selectedSection.classList.add('show');
+                }, 10); // Slight delay to trigger animation
+            }
+        }
+    </script>
+
+</body>
+</html>
